@@ -1,0 +1,67 @@
+media:
+  input: media
+  output: /media
+
+content:
+  - name: homepage
+    label: Homepage
+    type: file
+    path: content/homepage.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: Bovenregel
+        type: string
+      - name: headline_line_1
+        label: Kop regel 1
+        type: string
+      - name: headline_line_2
+        label: Kop regel 2
+        type: string
+      - name: headline_line_3
+        label: Kop regel 3
+        type: string
+      - name: intro
+        label: Introductietekst
+        type: text
+      - name: services_heading
+        label: Titel diensten
+        type: string
+      - name: services_intro
+        label: Inleiding diensten
+        type: text
+      - name: approach_heading
+        label: Titel werkwijze
+        type: string
+      - name: approach_paragraph_1
+        label: Werkwijze alinea 1
+        type: text
+      - name: approach_paragraph_2
+        label: Werkwijze alinea 2
+        type: text
+      - name: contact_heading
+        label: Titel contact
+        type: string
+      - name: contact_intro
+        label: Introductie contact
+        type: text
+      - name: seo_description
+        label: Google beschrijving
+        type: text
+
+  - name: services
+    label: Diensten
+    type: file
+    path: content/services.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Naam dienst
+        type: string
+      - name: description
+        label: Korte beschrijving
+        type: text
+      - name: image
+        label: Afbeelding
+        type: string
