@@ -1,0 +1,47 @@
+GREEN SOLUTIONS - ONLINE CMS STARTPAKKET
+
+Deze versie behoudt het uiterlijk van de eerdere website.
+De CMS-inhoud staat in content/homepage.json en content/services.json.
+
+BELANGRIJK
+- Openen door dubbelklikken werkt als voorbeeldsite met ingebouwde standaardteksten.
+- Voor het ophalen van actuele CMS-inhoud moet de website via een webserver worden geopend.
+- Er is nog GEEN echte login of CMS-account ingesteld; Pages CMS verzorgt dat na koppeling.
+- Het offerteformulier is nog een demonstratie en verstuurt geen e-mail.
+- De interactieve woning en huidige logo zijn voorbeeldbestanden.
+
+STAP 1 - GITHUB
+Maak een account op https://github.com/ als je er nog geen hebt.
+Maak een nieuwe repository, bijvoorbeeld green-solutions-site.
+Upload ALLE bestanden en mappen uit dit pakket, ook .pages.yml en .github.
+Gebruik de hoofdbranch main.
+
+STAP 2 - PUBLICEER WEBSITE
+Open in GitHub de repository: Settings > Pages.
+Selecteer bij Build and deployment: Source = GitHub Actions.
+Na een geslaagde workflow verschijnt een websiteadres.
+Let op: GitHub Pages publiceert een website doorgaans publiek.
+Gebruik voor de definitieve site later je eigen domeinnaam.
+
+STAP 3 - VERBIND HET BEHEERSYSTEEM
+Ga naar https://app.pagescms.org/
+Log in via GitHub en geef Pages CMS toegang tot de gekozen repository.
+Open Homepage of Diensten in het beheersysteem.
+Wijzig een tekst en sla op.
+Pages CMS slaat deze wijziging op in de GitHub-repository.
+De GitHub Actions-workflow publiceert de wijziging daarna automatisch.
+
+STAP 4 - VEILIGHEID
+Deel geen GitHub-wachtwoorden, persoonlijke toegangstokens of 2FA-codes.
+Voeg nog geen persoonsgegevens van klanten toe aan de repository.
+Publiceer het offerteformulier pas nadat een veilige ontvangstdienst en
+privacyverklaring zijn ingericht.
+
+OPMERKING
+De dienstenpagina bevat op dit moment zes vaste kaarten. Je kunt de tekst
+en afbeelding van deze kaarten wijzigen; het aantal kaarten uitbreiden
+vraagt in deze starter nog een technische aanpassing.
+
+DOCUMENTATIE
+https://pagescms.org/docs/quick-start/
+https://docs.github.com/en/pages

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Pannendaken",
+    "description": "Renovatie, herstel en isolatie",
+    "image": "dienst-1.webp"
+  },
+  {
+    "title": "Platte daken",
+    "description": "Bitumen, EPDM en dakrenovatie",
+    "image": "dienst-2.webp"
+  },
+  {
+    "title": "Groendaken",
+    "description": "Sedum, waterberging en beplanting",
+    "image": "dienst-3.webp"
+  },
+  {
+    "title": "Dakisolatie",
+    "description": "Voor pannendaken en platte daken",
+    "image": "dienst-4.webp"
+  },
+  {
+    "title": "Dakgoten & zinkwerk",
+    "description": "Goten, afvoeren en maatwerk",
+    "image": "dienst-5.webp"
+  },
+  {
+    "title": "Dakreparatie",
+    "description": "Lekkages, schadeherstel en onderhoud",
+    "image": "dienst-6.webp"
+  }
+]
