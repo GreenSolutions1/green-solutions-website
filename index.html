@@ -89,24 +89,54 @@
     filter: brightness(1.12) saturate(1.12);
   }
 }
-
-/* Knoppen duidelijker en gemakkelijker aanklikbaar */
-.hotspot {
-  border: 2px solid #d5b575b3;
-  background: #d5b57520;
-  border-radius: 24px;
-  min-height: 44px;
-  box-shadow: 0 2px 12px #0008;
-  transition: background .2s, box-shadow .2s;
+  
+/* Uniforme klikvlakken op de interactieve woning */
+.house-hotspots .hotspot {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.hotspot:hover,
-.hotspot:focus-visible,
-.hotspot[aria-pressed="true"] {
-  background: #d5b57565;
-  outline: 3px solid #f1d18c;
-  outline-offset: 2px;
-  box-shadow: 0 0 20px #d5b57588;
+/* Alleen goudkleurige gloed bij hover */
+@media (hover: hover) {
+  .house-hotspots .hotspot:hover {
+    border-color: #e5c17b;
+    background: rgba(213, 181, 117, 0.14);
+    box-shadow: 0 0 16px rgba(213, 181, 117, 0.4);
+  }
+}
+
+/* Toegankelijk voor toetsenbordgebruikers */
+.house-hotspots .hotspot:focus-visible {
+  outline: 2px solid #e5c17b;
+  outline-offset: 3px;
+}
+
+/* Geen blijvende gloed na aanklikken */
+.house-hotspots .hotspot[aria-pressed="true"] {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Ook geselecteerde knop licht op bij hover */
+@media (hover: hover) {
+  .house-hotspots .hotspot[aria-pressed="true"]:hover {
+    border-color: #e5c17b;
+    background: rgba(213, 181, 117, 0.14);
+    box-shadow: 0 0 16px rgba(213, 181, 117, 0.4);
+  }
 }
 
 /* Informatiekaart beter leesbaar */
