@@ -58,6 +58,107 @@
   .house-tip{display:none}
   .house-info{position:fixed}
 }
+
+/* Green Solutions: duidelijkere interactieve woning */
+@media (min-width: 761px) {
+  .hero {
+    min-height: 830px;
+  }
+
+  .hero-image,
+  .house-hotspots {
+    width: min(74vw, 1100px);
+    top: 105px;
+    right: 0;
+  }
+
+  .hero:before {
+    background: linear-gradient(
+      90deg,
+      #0a1613 0%,
+      #0a1613 23%,
+      #0a1613ed 37%,
+      #0a1613a8 49%,
+      #0a161340 64%,
+      transparent 83%
+    );
+  }
+
+  .hero-image {
+    opacity: 1;
+    filter: brightness(1.12) saturate(1.12);
+  }
+}
+
+/* Knoppen duidelijker en gemakkelijker aanklikbaar */
+.hotspot {
+  border: 2px solid #d5b575b3;
+  background: #d5b57520;
+  border-radius: 24px;
+  min-height: 44px;
+  box-shadow: 0 2px 12px #0008;
+  transition: background .2s, box-shadow .2s;
+}
+
+.hotspot:hover,
+.hotspot:focus-visible,
+.hotspot[aria-pressed="true"] {
+  background: #d5b57565;
+  outline: 3px solid #f1d18c;
+  outline-offset: 2px;
+  box-shadow: 0 0 20px #d5b57588;
+}
+
+/* Informatiekaart beter leesbaar */
+.house-info {
+  width: min(420px, calc(100vw - 36px));
+  padding: 24px;
+  border: 2px solid #d5b575;
+}
+
+.house-info h3 {
+  font-size: 24px;
+}
+
+.house-info p {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.house-info a {
+  display: inline-block;
+  font-size: 17px;
+  padding: 10px 0;
+}
+
+/* Instructie duidelijker */
+.house-tip {
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid #d5b575;
+  color: #f7f8f3;
+}
+
+/* Mobiel: afbeelding volledig zichtbaar houden */
+@media (max-width: 760px) {
+  .hero-image,
+  .house-hotspots {
+    width: 100%;
+  }
+
+  .hero-image {
+    filter: brightness(1.08) saturate(1.08);
+  }
+
+  .hotspot {
+    min-height: 0;
+    border-width: 1px;
+  }
+
+  .house-info {
+    padding: 18px;
+  }
+}  
 </style>
 </head><body>
 <header class="header"><div class="wrap nav"><a aria-label="Green Solutions homepage" href="#home"><img alt="Green Solutions – Vertrouwd vakmanschap voor een duurzamere wereld" class="logo" src="logo.svg"/></a><nav aria-label="Hoofdnavigatie" class="navlinks" id="navlinks"><a href="#home">Home</a><a href="#diensten">Onze diensten</a><a href="#woning">Ontdek uw dak</a><a href="#werkwijze">Werkwijze</a><a href="#contact">Contact</a></nav><a class="cta" href="#contact">Offerte aanvragen ↗</a><button aria-controls="navlinks" aria-expanded="false" class="mobilemenu" id="menu">☰ Menu</button></div></header>
