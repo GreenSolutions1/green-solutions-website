@@ -6,200 +6,55 @@
 @media(max-width:760px){.wrap{padding:0 19px}.header{position:absolute}.nav{height:79px}.logo{width:188px;max-width:70vw}.mobilemenu{display:block}.navlinks{display:none;position:absolute;left:0;right:0;top:79px;background:#0c1915;padding:25px;flex-direction:column;align-items:flex-start;gap:20px}.navlinks.open{display:flex}.hero{min-height:920px;display:block}.hero:before{background:linear-gradient(0deg,#0a1613 0%,#0a1613 28%,#0a1613aa 50%,transparent 88%)}.hero-image{top:79px;left:0;right:0;width:100%;height:480px;background-position:center top}.house-hotspots{top:79px;width:100%;height:480px}.hero-inner{padding-top:535px;padding-bottom:45px}.hero h1{font-size:clamp(41px,9vw,58px);letter-spacing:-1.4px}.lead{font-size:15px}.house-tip{top:510px;bottom:auto;right:20px}.house-info{top:315px;bottom:auto;right:15px;width:calc(100% - 30px)}.hotspot{min-width:50px;min-height:33px}.trust{gap:12px}.benefit-grid{grid-template-columns:repeat(2,1fr)}.benefit{border-bottom:1px solid #ffffff25}.section{padding:58px 0}.cards{grid-template-columns:1fr 1fr;gap:10px}.service{min-height:195px}.service h3{font-size:17px}.service .txt{padding:13px}.service p{font-size:11px}.story-grid,.contact-grid{grid-template-columns:1fr;gap:25px}.steps{grid-template-columns:1fr 1fr}.footer .wrap{flex-direction:column;text-align:center}.section-head{display:block}}
 @media(max-width:440px){.cards{grid-template-columns:1fr}.service{min-height:220px}.benefit .ic{font-size:20px}.benefit b{font-size:12px}.benefit small{font-size:10px}.actions .cta{padding:14px 15px}.hero{min-height:970px}}
 </style>
-<style id="hotspot-fix-v5">
-/* Keep the photograph and its clickable labels on one identical coordinate system. */
+<style id="hotspot-fix-v6">
+/* De klikvlakken gebruiken dezelfde afmetingen als de woningafbeelding. */
 .header{position:fixed;top:0;left:0;right:0}
 .hero{min-height:790px}
 .hero-image,.house-hotspots{
-  top:105px;right:0;left:auto;
-  width:min(65vw, calc((790px - 105px)*1.52174));
-  height:auto;aspect-ratio:1400 / 920;
+  top:105px;right:0;left:auto;width:min(65vw,calc((790px - 105px)*1547/1017));
+  height:auto;aspect-ratio:1547/1017;
 }
-.hero-image{
-  background-image:url('interactief-huis.webp');
-  background-position:center;
-  background-size:100% 100%;
-}
+.hero-image{background-image:url('interactief-huis.webp');background-position:center;background-size:100% 100%;filter:brightness(1.08) saturate(1.06);opacity:1}
 .house-hotspots{z-index:8}
-.hotspot{
-  border:0;outline:0;background:transparent;
-  border-radius:32px;min-width:0;min-height:0;
-  padding:0;transform:none;
-}
-.hotspot:hover,.hotspot:focus-visible,.hotspot[aria-pressed="true"]{
-  outline:2px solid #e7c67e;outline-offset:2px;
-  background:#d5b57525;
-}
-/* Hit areas match the printed labels and + icons in the photograph. */
-.hotspot.one{left:37.7%;top:11.7%;width:16.0%;height:6.6%}
-.hotspot.two{left:47.3%;top:26.0%;width:15.9%;height:6.8%}
-.hotspot.three{left:23.0%;top:45.4%;width:26.5%;height:6.9%}
-.hotspot.four{left:47.5%;top:56.7%;width:14.1%;height:6.5%}
-.hotspot.five{left:77.5%;top:48.4%;width:14.7%;height:6.8%}
-.hotspot.six{left:55.7%;top:79.1%;width:16.0%;height:7.2%}
-.hotspot.seven{left:58.2%;top:43.9%;width:14.1%;height:6.6%}
+.hotspot{border:0!important;outline:0;background:transparent!important;border-radius:28px;min-width:0;min-height:0;padding:0;transform:none;color:transparent}
+/* Alleen bij hover of toetsenbordfocus een gouden rand; niet na een klik. */
+.hotspot:hover,.hotspot:focus-visible{outline:3px solid #e7c67e!important;outline-offset:2px;background:#d5b57522!important}
+.hotspot[aria-pressed="true"]:not(:hover):not(:focus-visible){outline:0!important;background:transparent!important}
+/* Nauwkeurige posities op de afbeelding (1547 x 1017). */
+.hotspot.chimney{left:35.6%;top:1.5%;width:15%;height:5.7%}
+.hotspot.one{left:36.7%;top:11.0%;width:16.6%;height:6.8%}
+.hotspot.two{left:46.0%;top:24.8%;width:16.7%;height:7.0%}
+.hotspot.three{left:22.0%;top:43.9%;width:27.8%;height:7.3%}
+.hotspot.four{left:45.8%;top:55.0%;width:15.8%;height:7.1%}
+.hotspot.five{left:56.5%;top:42.0%;width:17.0%;height:7.1%}
+.hotspot.six{left:53.5%;top:77.0%;width:18.7%;height:7.5%}
+.hotspot.seven{left:75.8%;top:46.9%;width:17.4%;height:7.2%}
 .house-info{position:fixed;right:28px;bottom:26px;z-index:30;width:min(350px,calc(100vw - 36px))}
 .house-tip{z-index:9;right:20px;bottom:16px}
 #home,#woning,#diensten,#werkwijze,#contact{scroll-margin-top:115px}
-@media(max-width:1100px){
-  .hero-image,.house-hotspots{width:68vw;top:105px}
-}
+@media(max-width:1100px){.hero-image,.house-hotspots{width:68vw;top:105px}}
 @media(max-width:760px){
   .header{position:sticky}
   .hero{display:flex;flex-direction:column;min-height:0;overflow:visible;padding-bottom:20px}
   .hero:before{background:linear-gradient(180deg,#0a1613 0%,transparent 100%);height:550px}
   .hero-inner{order:0;padding-top:40px;padding-bottom:28px}
-  .hero-image,.house-hotspots{
-    position:relative;right:auto;top:auto;left:auto;
-    width:100%;height:auto;aspect-ratio:1400/920;
-  }
+  .hero-image,.house-hotspots{position:relative;right:auto;top:auto;left:auto;width:100%;height:auto;aspect-ratio:1547/1017}
   .hero-image{order:1;z-index:2}
-  .house-hotspots{order:2;margin-top:calc(-100vw * 920 / 1400);z-index:10}
+  .house-hotspots{order:2;margin-top:calc(-100vw * 1017 / 1547);z-index:10}
   .house-tip{display:none}
   .house-info{position:fixed}
 }
-
-/* Green Solutions: duidelijkere interactieve woning */
-@media (min-width: 761px) {
-  .hero {
-    min-height: 830px;
-  }
-
-  .hero-image,
-  .house-hotspots {
-    width: min(74vw, 1100px);
-    top: 105px;
-    right: 0;
-  }
-
-  .hero:before {
-    background: linear-gradient(
-      90deg,
-      #0a1613 0%,
-      #0a1613 23%,
-      #0a1613ed 37%,
-      #0a1613a8 49%,
-      #0a161340 64%,
-      transparent 83%
-    );
-  }
-
-  .hero-image {
-    opacity: 1;
-    filter: brightness(1.12) saturate(1.12);
-  }
-}
-  
-/* Uniforme klikvlakken op de interactieve woning */
-.house-hotspots .hotspot {
-  box-sizing: border-box;
-  min-width: 0;
-  min-height: 0;
-  padding: 0;
-  border: 2px solid transparent;
-  border-radius: 30px;
-  outline: none;
-  background: transparent;
-  box-shadow: none;
-  cursor: pointer;
-  transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-/* Alleen goudkleurige gloed bij hover */
-@media (hover: hover) {
-  .house-hotspots .hotspot:hover {
-    border-color: #e5c17b;
-    background: rgba(213, 181, 117, 0.14);
-    box-shadow: 0 0 16px rgba(213, 181, 117, 0.4);
-  }
-}
-
-/* Toegankelijk voor toetsenbordgebruikers */
-.house-hotspots .hotspot:focus-visible {
-  outline: 2px solid #e5c17b;
-  outline-offset: 3px;
-}
-
-/* Geen blijvende gloed na aanklikken */
-.house-hotspots .hotspot[aria-pressed="true"] {
-  border-color: transparent;
-  background: transparent;
-  box-shadow: none;
-}
-
-/* Ook geselecteerde knop licht op bij hover */
-@media (hover: hover) {
-  .house-hotspots .hotspot[aria-pressed="true"]:hover {
-    border-color: #e5c17b;
-    background: rgba(213, 181, 117, 0.14);
-    box-shadow: 0 0 16px rgba(213, 181, 117, 0.4);
-  }
-}
-
-/* Informatiekaart beter leesbaar */
-.house-info {
-  width: min(420px, calc(100vw - 36px));
-  padding: 24px;
-  border: 2px solid #d5b575;
-}
-
-.house-info h3 {
-  font-size: 24px;
-}
-
-.house-info p {
-  font-size: 16px;
-  line-height: 1.65;
-}
-
-.house-info a {
-  display: inline-block;
-  font-size: 17px;
-  padding: 10px 0;
-}
-
-/* Instructie duidelijker */
-.house-tip {
-  font-size: 16px;
-  font-weight: 700;
-  border: 1px solid #d5b575;
-  color: #f7f8f3;
-}
-
-/* Mobiel: afbeelding volledig zichtbaar houden */
-@media (max-width: 760px) {
-  .hero-image,
-  .house-hotspots {
-    width: 100%;
-  }
-
-  .hero-image {
-    filter: brightness(1.08) saturate(1.08);
-  }
-
-  .hotspot {
-    min-height: 0;
-    border-width: 1px;
-  }
-
-  .house-info {
-    padding: 18px;
-  }
-}  
 </style>
 </head><body>
 <header class="header"><div class="wrap nav"><a aria-label="Green Solutions homepage" href="#home"><img alt="Green Solutions – Vertrouwd vakmanschap voor een duurzamere wereld" class="logo" src="logo.svg"/></a><nav aria-label="Hoofdnavigatie" class="navlinks" id="navlinks"><a href="#home">Home</a><a href="#diensten">Onze diensten</a><a href="#woning">Ontdek uw dak</a><a href="#werkwijze">Werkwijze</a><a href="#contact">Contact</a></nav><a class="cta" href="#contact">Offerte aanvragen ↗</a><button aria-controls="navlinks" aria-expanded="false" class="mobilemenu" id="menu">☰ Menu</button></div></header>
-<main><section class="hero" id="home"><div aria-label="Fotorealistische voorbeeldwoning met pannendak, plat dak, groendak en dakgoten" class="hero-image" role="img"></div><div aria-label="Klikbare onderdelen van de voorbeeldwoning" class="house-hotspots" id="woning"><button aria-label="Bekijk pannendaken" class="hotspot one" data-key="pannen">Pannendaken</button><button aria-label="Bekijk dakisolatie" class="hotspot two" data-key="isolatie">Dakisolatie</button><button aria-label="Bekijk platte daken" class="hotspot three" data-key="plat">Platte daken</button><button aria-label="Bekijk groendaken" class="hotspot four" data-key="groen">Groendaken</button><button aria-label="Bekijk dakgoten" class="hotspot five" data-key="goot">Dakgoten</button><button aria-label="Bekijk dakreparaties" class="hotspot six" data-key="reparatie">Dakreparaties</button><button aria-label="Bekijk zinkwerk" class="hotspot seven" data-key="zink">Zinkwerk</button></div><div class="house-tip" id="house-tip">✦ Klik op een dakonderdeel voor uitleg</div><div aria-live="polite" class="house-info" id="house-info"><h3 id="house-title"></h3><p id="house-description"></p><a href="#contact">Offerte aanvragen →</a></div><div class="wrap hero-inner"><div class="hero-copy"><div class="eyebrow" id="cms-eyebrow">Dakrenovatie · Isolatie · Groendaken</div><h1 id="cms-headline">Uw dak.<br/>Vakkundig vernieuwd.<br/><span>Slim verbeterd.</span></h1><p class="lead" id="cms-intro">Van pannendaken en platte daken tot dakisolatie, zinkwerk en groendaken. Eén aanspreekpunt voor advies, renovatie en onderhoud.</p><div class="actions"><a class="cta" href="#contact">Offerte aanvragen <span>→</span></a><a class="cta ghost" href="#diensten">Bekijk onze diensten ↓</a></div><div class="trust"><span>Helder advies</span><span>Vakkundige uitvoering</span><span>Werkzaam in Nederland</span></div></div></div></section>
+<main><section class="hero" id="home"><div aria-label="Voorbeeldwoning met acht klikbare dakonderdelen, waaronder schoorsteen, pannendak, plat dak, groendak, dakgoten en zinkwerk" class="hero-image" role="img"></div><div aria-label="Klikbare onderdelen van de voorbeeldwoning" class="house-hotspots" id="woning"><button aria-label="Bekijk schoorsteenwerkzaamheden" class="hotspot chimney" data-key="schoorsteen">Schoorsteen</button><button aria-label="Bekijk pannendaken" class="hotspot one" data-key="pannen">Pannendaken</button><button aria-label="Bekijk dakisolatie" class="hotspot two" data-key="isolatie">Dakisolatie</button><button aria-label="Bekijk platte daken" class="hotspot three" data-key="plat">Platte daken</button><button aria-label="Bekijk groendaken" class="hotspot four" data-key="groen">Groendaken</button><button aria-label="Bekijk dakgoten" class="hotspot five" data-key="goot">Dakgoten</button><button aria-label="Bekijk dakreparaties" class="hotspot six" data-key="reparatie">Dakreparaties</button><button aria-label="Bekijk zinkwerk" class="hotspot seven" data-key="zink">Zinkwerk</button></div><div class="house-tip" id="house-tip">✦ Klik op een dakonderdeel voor uitleg</div><div aria-live="polite" class="house-info" id="house-info"><h3 id="house-title"></h3><p id="house-description"></p><a href="#contact">Offerte aanvragen →</a></div><div class="wrap hero-inner"><div class="hero-copy"><div class="eyebrow" id="cms-eyebrow">Dakrenovatie · Isolatie · Groendaken</div><h1 id="cms-headline">Uw dak.<br/>Vakkundig vernieuwd.<br/><span>Slim verbeterd.</span></h1><p class="lead" id="cms-intro">Van pannendaken en platte daken tot dakisolatie, zinkwerk en groendaken. Eén aanspreekpunt voor advies, renovatie en onderhoud.</p><div class="actions"><a class="cta" href="#contact">Offerte aanvragen <span>→</span></a><a class="cta ghost" href="#diensten">Bekijk onze diensten ↓</a></div><div class="trust"><span>Helder advies</span><span>Vakkundige uitvoering</span><span>Werkzaam in Nederland</span></div></div></div></section>
 <section class="benefits"><div class="wrap benefit-grid"><div class="benefit"><div class="ic">♧</div><div><b>Praktische verduurzaming</b><small>Isolatie en groendaken waar passend</small></div></div><div class="benefit"><div class="ic">◇</div><div><b>Technisch verantwoord</b><small>Waterdichtheid en veiligheid voorop</small></div></div><div class="benefit"><div class="ic">⌂</div><div><b>Complete dakdiensten</b><small>Van renovatie tot zinkwerk</small></div></div><div class="benefit"><div class="ic">◎</div><div><b>Eén aanspreekpunt</b><small>Van eerste advies tot nazorg</small></div></div></div></section>
 <section class="section services" id="diensten"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Onze expertise</div><h2 id="cms-services-heading">Alles voor een goed dak.</h2></div><p class="section-intro" id="cms-services-intro">Of u nu een lekkage wilt verhelpen, uw dak wilt vernieuwen of uw woning beter wilt isoleren: wij bekijken welke oplossing bij uw dak past.</p></div><div class="cards"><a class="service" data-cms-card="0" href="#contact"><img alt="Dakpannen op een schuin dak" loading="lazy" src="dienst-1.webp"/><div class="txt"><h3>Pannendaken</h3><p>Renovatie, herstel en isolatie</p><span class="arr">↗</span></div></a><a class="service" data-cms-card="1" href="#contact"><img alt="Plat dak met dakbedekking" loading="lazy" src="dienst-2.webp"/><div class="txt"><h3>Platte daken</h3><p>Bitumen, EPDM en dakrenovatie</p><span class="arr">↗</span></div></a><a class="service" data-cms-card="2" href="#contact"><img alt="Begroeid dak met sedum" loading="lazy" src="dienst-3.webp"/><div class="txt"><h3>Groendaken</h3><p>Sedum, waterberging en beplanting</p><span class="arr">↗</span></div></a><a class="service" data-cms-card="3" href="#contact"><img alt="Isolatiemateriaal in dakconstructie" loading="lazy" src="dienst-4.webp"/><div class="txt"><h3>Dakisolatie</h3><p>Voor pannendaken en platte daken</p><span class="arr">↗</span></div></a><a class="service" data-cms-card="4" href="#contact"><img alt="Metalen dakgoot en afvoer" loading="lazy" src="dienst-5.webp"/><div class="txt"><h3>Dakgoten &amp; zinkwerk</h3><p>Goten, afvoeren en maatwerk</p><span class="arr">↗</span></div></a><a class="service" data-cms-card="5" href="#contact"><img alt="Herstel van dakbedekking" loading="lazy" src="dienst-6.webp"/><div class="txt"><h3>Dakreparatie</h3><p>Lekkages, schadeherstel en onderhoud</p><span class="arr">↗</span></div></a></div></div></section>
 <section class="section story" id="werkwijze"><div class="wrap story-grid"><div><img alt="Voorbeeldwoning met verschillende dakoplossingen" class="story-img" loading="lazy" src="interactief-huis.webp"/></div><div><div class="eyebrow">Meer dan alleen dakbedekking</div><h2 id="cms-approach-heading">Een doordachte oplossing voor uw woning.</h2><p id="cms-approach-1">Een goed dak begint met een goed plan. We kijken naar de staat van de dakbedekking, de afwatering en de mogelijkheden voor isolatie. Als de constructie en dakopbouw geschikt zijn, kan een groendak een waardevolle aanvulling zijn.</p><p id="cms-approach-2">Zo krijgt u een helder voorstel waarin noodzakelijk dakwerk en eventuele verbeteringen afzonderlijk worden toegelicht.</p><a class="cta" href="#contact">Bespreek uw dak →</a></div></div><div class="wrap steps"><div class="step"><strong>01</strong><h3>Uw aanvraag</h3><p>Vertel ons welk dak u heeft en wat u wilt laten uitvoeren.</p></div><div class="step"><strong>02</strong><h3>Inspectie &amp; advies</h3><p>We beoordelen de situatie en de technische mogelijkheden.</p></div><div class="step"><strong>03</strong><h3>Heldere offerte</h3><p>U ontvangt een voorstel met de werkzaamheden en opties.</p></div><div class="step"><strong>04</strong><h3>Uitvoering &amp; nazorg</h3><p>Na uitvoering bespreken we oplevering en passend onderhoud.</p></div></div></section>
 <section class="section contact" id="contact"><div class="wrap contact-grid"><div><div class="eyebrow">Contact</div><h2 id="cms-contact-heading">Wat kunnen wij voor uw dak betekenen?</h2><p id="cms-contact-intro">Heeft u plannen voor een dakrenovatie, isolatie of groendak? Beschrijf uw situatie. Dan kunnen we gericht meedenken over de mogelijkheden.</p><p><strong>Let op:</strong> deze website is nog een ontwerp. Het formulier is een demonstratie en verstuurt nog geen aanvragen.</p></div><form class="form" id="quote"><label>Naam<input autocomplete="name" name="naam" placeholder="Uw naam" required=""/></label><label>E-mailadres<input autocomplete="email" name="email" placeholder="naam@voorbeeld.nl" required="" type="email"/></label><label>Waar gaat uw aanvraag over?<select name="dienst"><option>Pannendak</option><option>Plat dak (bitumen / EPDM)</option><option>Dakisolatie</option><option>Groendak</option><option>Dakgoten en zinkwerk</option><option>Dakreparatie</option><option>Anders / meerdere werkzaamheden</option></select></label><label>Uw bericht<textarea name="bericht" placeholder="Vertel kort wat u wilt laten uitvoeren..." required=""></textarea></label><button class="cta" type="submit">Bekijk mijn aanvraag →</button><p class="notice">Demonstratie: er wordt niets verzonden of opgeslagen.</p><p id="form-response" role="status"></p></form></div></section></main>
 <footer class="footer"><div class="wrap"><img alt="Green Solutions" src="logo.svg" width="175"/><small>© <span id="year"></span> Green Solutions · Website in ontwikkeling</small><a href="#home">Terug naar boven ↑</a></div></footer>
 <script>
-const content={pannen:['Pannendaken','Dakpannen vervangen, dakrenovatie en herstel van de dakconstructie. Ook isolatie kan worden meegenomen.'],isolatie:['Dakisolatie','Isolatieverbetering van schuine pannendaken én platte daken, afgestemd op de bestaande dakopbouw.'],plat:['Platte daken','Renovatie en herstel van platte daken met bitumen of EPDM, inclusief aansluitingen en afwatering.'],groen:['Groendaken','Sedum en andere passende begroeiing. We beoordelen eerst draagkracht, dakopbouw, waterafvoer en onderhoud.'],goot:['Dakgoten','Herstel en vervanging van dakgoten, regenwaterafvoeren en aansluitingen.'],reparatie:['Dakreparatie','Onderzoek en herstel van lekkages, beschadigingen en versleten dakdetails.'],zink:['Zinkwerk','Zinken dakgoten, afvoeren, dakranden en aansluitingen op maat.']};
+const content={schoorsteen:['Schoorsteenwerkzaamheden','Inspectie, herstel, renovatie en verwijdering van schoorstenen, inclusief lood- en voegwerk waar nodig.'],pannen:['Pannendaken','Dakpannen vervangen, dakrenovatie en herstel van de dakconstructie. Ook isolatie kan worden meegenomen.'],isolatie:['Dakisolatie','Isolatieverbetering van schuine pannendaken én platte daken, afgestemd op de bestaande dakopbouw.'],plat:['Platte daken','Renovatie en herstel van platte daken met bitumen of EPDM, inclusief aansluitingen en afwatering.'],groen:['Groendaken','Sedum en andere passende begroeiing. We beoordelen eerst draagkracht, dakopbouw, waterafvoer en onderhoud.'],goot:['Dakgoten','Herstel en vervanging van dakgoten, regenwaterafvoeren en aansluitingen.'],reparatie:['Dakreparatie','Onderzoek en herstel van lekkages, beschadigingen en versleten dakdetails.'],zink:['Zinkwerk','Zinken dakgoten, afvoeren, dakranden en aansluitingen op maat.']};
 const info=document.getElementById('house-info'),tip=document.getElementById('house-tip');document.querySelectorAll('.hotspot').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.hotspot').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');const [t,d]=content[b.dataset.key];document.getElementById('house-title').textContent=t;document.getElementById('house-description').textContent=d;info.classList.add('show');tip.style.display='none'}));
 const menu=document.getElementById('menu'),links=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',open)});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('quote').addEventListener('submit',e=>{e.preventDefault();document.getElementById('form-response').textContent='Uw gegevens zijn ingevuld. Dit is een demonstratie: de aanvraag is niet verzonden.'});
 </script><script>
