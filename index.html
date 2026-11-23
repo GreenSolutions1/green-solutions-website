@@ -1,27 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Green Solutions: dakrenovatie, pannendaken, platte daken, dakisolatie, groendaken, schoorstenen en zinkwerk.">
-<title>Green Solutions | Uw dak vakkundig vernieuwd</title>
-
-/* Hoofdtekst vrijhouden van het platte-daklabel */
-@media (min-width: 1051px) {
-  .hero-copy {
-    position: relative;
-    z-index: 12;
-  }
-
-  .house-hotspots {
-    z-index: 8;
-  }
-
-  .hero-image {
-    z-index: 1;
-  }
-}
+<title>Green Solutions | Uw dak. Onze zorg.</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
@@ -34,7 +17,6 @@
 }
 
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -45,11 +27,7 @@ body {
 }
 
 a { color: inherit; text-decoration: none; }
-
-button, input, select, textarea {
-  font: inherit;
-}
-
+button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
 
 .wrap {
@@ -131,7 +109,8 @@ header {
 
 .hero {
   position: relative;
-  min-height: 750px;
+  min-height: 0;
+  height: 38.15vw;
   overflow: hidden;
   background: var(--dark);
 }
@@ -140,7 +119,7 @@ header {
   position: absolute;
   top: 0;
   right: 0;
-  width: 67%;
+  width: 58%;
   aspect-ratio: 1508 / 992;
   background: url('interactief-huis.webp') center / 100% 100% no-repeat;
 }
@@ -152,13 +131,11 @@ header {
   z-index: 2;
   pointer-events: none;
   background: linear-gradient(
-    90deg,
+    to right,
     #091713 0%,
-    #091713 19%,
-    #091713ed 30%,
-    #091713a6 43%,
-    #09171345 58%,
-    transparent 82%
+    #091713 49%,
+    transparent 49%,
+    transparent 100%
   );
 }
 
@@ -173,6 +150,12 @@ header {
 
 .hero-content a { pointer-events: auto; }
 
+@media (min-width: 761px) {
+  .hero-content {
+    transform: translateY(-38px);
+  }
+}
+
 .eyebrow {
   color: var(--gold);
   font-size: 15px;
@@ -182,10 +165,11 @@ header {
 }
 
 .hero h1 {
+  max-width: 54%;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(48px, 5.5vw, 94px);
+  font-size: clamp(42px, 4.25vw, 74px);
   font-weight: 600;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
   line-height: 1.12;
   margin: 40px 0 30px;
 }
@@ -193,7 +177,7 @@ header {
 .hero h1 span { color: var(--green); }
 
 .hero p {
-  max-width: 630px;
+  max-width: min(520px, 45%);
   font-size: clamp(17px, 1.5vw, 22px);
   line-height: 1.8;
 }
@@ -205,23 +189,17 @@ header {
   margin-top: 38px;
 }
 
-/* KLIKBARE WONING */
+/* INTERACTIEVE WONING */
 
 .house-hotspots {
   position: absolute;
   z-index: 5;
   top: 0;
   right: 0;
-  width: 67%;
+  width: 58%;
   aspect-ratio: 1508 / 992;
   pointer-events: none;
 }
-
-/*
-  De tekst en groene plusjes staan al in de afbeelding.
-  Daarom zijn de knoppen transparant.
-  Alleen bij aanwijzen verschijnt de gouden rand.
-*/
 
 .hotspot {
   position: absolute;
@@ -237,12 +215,11 @@ header {
 .hotspot:hover,
 .hotspot:focus-visible {
   border-color: #f3d28d;
-  box-shadow: 0 0 0 2px #f3d28d33,
-              0 0 20px #e5bd6955;
+  box-shadow:
+    0 0 0 2px #f3d28d33,
+    0 0 20px #e5bd6955;
   outline: none;
 }
-
-/* Posities afgestemd op de woningafbeelding */
 
 .hs-schoorsteen {
   left: 36.4%;
@@ -536,14 +513,35 @@ footer small { color: #b6c3b8; }
 
 /* MOBIEL */
 
-@media(max-width: 1100px) {
-  .navlinks { gap: 15px; font-size: 14px; }
+@media (max-width: 1100px) {
+  .navlinks {
+    gap: 15px;
+    font-size: 14px;
+  }
+
   .logo { width: 200px; }
-  .hero-photo, .house-hotspots { width: 75%; }
+
+  .hero-photo,
+  .house-hotspots {
+    width: 62%;
+  }
+
   .hero-content { padding-top: 80px; }
+
+  .hero h1 {
+    font-size: clamp(39px, 4.15vw, 60px);
+    max-width: 53%;
+  }
+
+  .hero p { max-width: 48%; }
 }
 
-@media(max-width: 760px) {
+@media (min-width: 761px) and (max-width: 900px) {
+  .hero h1 { font-size: 38px; }
+  .hero p { font-size: 16px; }
+}
+
+@media (max-width: 760px) {
   .nav {
     min-height: 85px;
     flex-wrap: wrap;
@@ -564,6 +562,7 @@ footer small { color: #b6c3b8; }
 
   .hero {
     min-height: 0;
+    height: auto;
     padding-top: 0;
     display: flex;
     flex-direction: column;
@@ -596,9 +595,14 @@ footer small { color: #b6c3b8; }
   .hero h1 {
     margin: 25px 0;
     letter-spacing: -1px;
+    max-width: 100%;
+    font-size: clamp(39px, 8vw, 60px);
   }
 
-  .hero p { font-size: 17px; }
+  .hero p {
+    font-size: 17px;
+    max-width: 100%;
+  }
 
   .hotspot { border-width: 2px; }
 
@@ -617,7 +621,7 @@ footer small { color: #b6c3b8; }
   .section { padding: 65px 0; }
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
   .benefit-grid,
   .service-grid,
   .steps {
@@ -632,7 +636,7 @@ footer small { color: #b6c3b8; }
   .btn { padding: 15px 20px; }
 }
 
-@media(prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     scroll-behavior: auto !important;
     transition: none !important;
@@ -646,11 +650,17 @@ footer small { color: #b6c3b8; }
 <header id="home">
   <div class="wrap nav">
     <a href="#home" aria-label="Green Solutions homepage">
-      <img class="logo" src="logo.svg" alt="Green Solutions">
+      <img
+        class="logo"
+        src="https://greensolutions1.github.io/green-solutions-website/logo.svg"
+        alt="Green Solutions">
     </a>
 
-    <button class="menu-toggle" id="menu-toggle"
-      aria-expanded="false" aria-controls="navlinks">
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-expanded="false"
+      aria-controls="navlinks">
       Menu ☰
     </button>
 
@@ -672,44 +682,61 @@ footer small { color: #b6c3b8; }
 
 <section class="hero" id="woning">
 
-  <div class="hero-photo"
+  <div
+    class="hero-photo"
     role="img"
     aria-label="Woning met verschillende dakoplossingen">
   </div>
 
   <div class="house-hotspots">
 
-    <button class="hotspot hs-schoorsteen"
+    <button
+      class="hotspot hs-schoorsteen"
       data-service="schoorsteen"
-      aria-label="Meer informatie over schoorstenen"></button>
+      aria-label="Meer informatie over schoorstenen">
+    </button>
 
-    <button class="hotspot hs-pannen"
+    <button
+      class="hotspot hs-pannen"
       data-service="pannen"
-      aria-label="Meer informatie over pannendaken"></button>
+      aria-label="Meer informatie over pannendaken">
+    </button>
 
-    <button class="hotspot hs-isolatie"
+    <button
+      class="hotspot hs-isolatie"
       data-service="isolatie"
-      aria-label="Meer informatie over dakisolatie"></button>
+      aria-label="Meer informatie over dakisolatie">
+    </button>
 
-    <button class="hotspot hs-plat"
+    <button
+      class="hotspot hs-plat"
       data-service="plat"
-      aria-label="Meer informatie over platte daken"></button>
+      aria-label="Meer informatie over platte daken">
+    </button>
 
-    <button class="hotspot hs-dakgoten"
+    <button
+      class="hotspot hs-dakgoten"
       data-service="dakgoten"
-      aria-label="Meer informatie over dakgoten"></button>
+      aria-label="Meer informatie over dakgoten">
+    </button>
 
-    <button class="hotspot hs-zink"
+    <button
+      class="hotspot hs-zink"
       data-service="zink"
-      aria-label="Meer informatie over zinkwerk"></button>
+      aria-label="Meer informatie over zinkwerk">
+    </button>
 
-    <button class="hotspot hs-groen"
+    <button
+      class="hotspot hs-groen"
       data-service="groen"
-      aria-label="Meer informatie over groendaken"></button>
+      aria-label="Meer informatie over groendaken">
+    </button>
 
-    <button class="hotspot hs-reparatie"
+    <button
+      class="hotspot hs-reparatie"
       data-service="reparatie"
-      aria-label="Meer informatie over dakreparatie"></button>
+      aria-label="Meer informatie over dakreparatie">
+    </button>
 
   </div>
 
@@ -721,14 +748,12 @@ footer small { color: #b6c3b8; }
 
     <h1>
       Uw dak.<br>
-      Vakkundig vernieuwd.<br>
-      <span>Slim verbeterd.</span>
+      <span>Onze zorg.</span>
     </h1>
 
     <p>
       Van pannendaken en platte daken tot dakisolatie,
-      zinkwerk en groendaken. Eén aanspreekpunt voor
-      advies, renovatie en onderhoud.
+      zinkwerk en groendaken. Alles onder één dak.
     </p>
 
     <div class="actions">
@@ -744,17 +769,23 @@ footer small { color: #b6c3b8; }
   </div>
 </section>
 
-<div class="house-info" id="house-info"
-  role="dialog" aria-label="Informatie over dakonderdeel">
+<div
+  class="house-info"
+  id="house-info"
+  role="dialog"
+  aria-label="Informatie over dakonderdeel">
 
-  <button class="close-info" id="close-info"
-    aria-label="Venster sluiten">×</button>
+  <button
+    class="close-info"
+    id="close-info"
+    aria-label="Venster sluiten">
+    ×
+  </button>
 
   <h3 id="info-title"></h3>
   <p id="info-text"></p>
 
-  <a class="btn btn-gold" href="#contact"
-    id="info-contact">
+  <a class="btn btn-gold" href="#contact" id="info-contact">
     Offerte aanvragen →
   </a>
 
@@ -891,7 +922,8 @@ footer small { color: #b6c3b8; }
         </a>
       </div>
 
-      <img src="interactief-huis.webp"
+      <img
+        src="interactief-huis.webp"
         alt="Voorbeeldwoning met verschillende dakoplossingen">
 
     </div>
@@ -952,14 +984,20 @@ footer small { color: #b6c3b8; }
 
       <label>
         Naam
-        <input type="text" name="naam"
-          placeholder="Uw naam" required>
+        <input
+          type="text"
+          name="naam"
+          placeholder="Uw naam"
+          required>
       </label>
 
       <label>
         E-mailadres
-        <input type="email" name="email"
-          placeholder="naam@voorbeeld.nl" required>
+        <input
+          type="email"
+          name="email"
+          placeholder="naam@voorbeeld.nl"
+          required>
       </label>
 
       <label>
@@ -979,7 +1017,8 @@ footer small { color: #b6c3b8; }
 
       <label>
         Uw bericht
-        <textarea name="bericht"
+        <textarea
+          name="bericht"
           placeholder="Vertel kort wat u wilt laten uitvoeren..."
           required></textarea>
       </label>
@@ -1002,7 +1041,10 @@ footer small { color: #b6c3b8; }
 <footer>
   <div class="wrap footer-inner">
 
-    <img src="logo.svg" alt="Green Solutions" width="175">
+    <img
+      src="https://greensolutions1.github.io/green-solutions-website/logo.svg"
+      alt="Green Solutions"
+      width="175">
 
     <small>
       © <span id="year"></span> Green Solutions ·
